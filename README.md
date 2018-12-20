@@ -18,7 +18,7 @@ npm install -g @angular/cli
 ## Installing
 - Clone this repo:
 ```
-git clone git@github.com:90lucasgabriel/restaurant-web.git
+git clone git@github.com:90lucasgabriel/portfolio.git
 ```
 - Access directory:
 ```
