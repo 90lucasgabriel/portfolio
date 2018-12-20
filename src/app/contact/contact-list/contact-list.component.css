@@ -1,0 +1,12 @@
+form mat-icon {
+  font-size:      22px !important;
+}
+
+form.big {
+  font-size:      22px;
+  margin:         25px;
+}
+
+.cdk-overlay-container .cdk-global-overlay-wrapper .cdk-overlay-pane {
+  position:       fixed !important;
+}

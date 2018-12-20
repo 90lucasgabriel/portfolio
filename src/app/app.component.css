@@ -1,0 +1,41 @@
+.mat-tab-nav-bar {
+  position:       fixed;
+  left:           0;
+  width:          100%;
+  z-index:        2;
+}
+
+.mat-tab-nav-bar.top {  
+  top:            0;
+  box-shadow:     0px 2px 8px 0px rgba(0,0,0,0.5);
+}
+
+.mat-tab-nav-bar.bottom {  
+  bottom:         0;
+  box-shadow:     0px -2px 8px 0px rgba(0,0,0,0.5);
+}
+
+.mat-tab-link .mat-input {
+  max-height:     23px;
+}
+
+.mat-tab-nav-bar .mat-tab-link {
+  min-height:     56px;
+}
+
+.main-content {
+  max-height:     calc(100vh - 56px);
+  min-height:     calc(100vh - 56px);
+  overflow-y:     auto;
+  margin-bottom:  56px;
+  overflow-x:     hidden;
+  max-width:      100wh;
+}
+
+.main-content.top {
+  margin-top:     56px;
+}
+
+.main-content.bottom {
+  margin-bottom:  56px;
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="Portfolio" content="Lucas Gabriel - Portfolio">
+  <title>Lucas Gabriel - Portfolio</title>
+  <base href="/">
+  
+  <meta name="referrer" content="no-referrer"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+
+  <style>
+    /* https://codepen.io/mrrocks/pen/EiplA */
+html,
+    body {
+      height: 100%;
+      margin: 0px;
+    }
+.contentChart {
+      height: 100%;
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+    }
+.spinner {
+      -webkit-animation: rotator 1.4s linear infinite;
+      animation: rotator 1.4s linear infinite;
+    }
+@-webkit-keyframes rotator {
+      0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+      100% {
+        -webkit-transform: rotate(270deg);
+        transform: rotate(270deg);
+      }
+    }
+@keyframes rotator {
+      0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+      100% {
+        -webkit-transform: rotate(270deg);
+        transform: rotate(270deg);
+      }
+    }
+.path {
+      stroke-dasharray: 187;
+      stroke-dashoffset: 0;
+      -webkit-transform-origin: center;
+      transform-origin: center;
+      -webkit-animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+      animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+    }
+@-webkit-keyframes colors {
+      0% {
+        stroke: #4285F4;
+      }
+      25% {
+        stroke: #DE3E35;
+      }
+      50% {
+        stroke: #F7C223;
+      }
+      75% {
+        stroke: #1B9A59;
+      }
+      100% {
+        stroke: #4285F4;
+      }
+    }
+@keyframes colors {
+      0% {
+        stroke: #4285F4;
+      }
+      25% {
+        stroke: #DE3E35;
+      }
+      50% {
+        stroke: #F7C223;
+      }
+      75% {
+        stroke: #1B9A59;
+      }
+      100% {
+        stroke: #4285F4;
+      }
+    }
+@-webkit-keyframes dash {
+      0% {
+        stroke-dashoffset: 187;
+      }
+      50% {
+        stroke-dashoffset: 46.75;
+        -webkit-transform: rotate(135deg);
+        transform: rotate(135deg);
+      }
+      100% {
+        stroke-dashoffset: 187;
+        -webkit-transform: rotate(450deg);
+        transform: rotate(450deg);
+      }
+    }
+@keyframes dash {
+      0% {
+        stroke-dashoffset: 187;
+      }
+      50% {
+        stroke-dashoffset: 46.75;
+        -webkit-transform: rotate(135deg);
+        transform: rotate(135deg);
+      }
+      100% {
+        stroke-dashoffset: 187;
+        -webkit-transform: rotate(450deg);
+        transform: rotate(450deg);
+      }
+    }
+  </style>
+
+  <meta name="Description" content="Lucas Gabriel Portfolio">
+
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#009688">
+  <noscript>Your browser does not support JavaScript!</noscript>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1976d2">
+</head>
+<body class="mat-app-background light-theme">
+  <app-root>
+    <div class="contentChart">
+      <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66">
+        <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+      </svg>
+    </div>  
+  </app-root>   
+</body>
+</html>

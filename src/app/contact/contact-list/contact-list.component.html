@@ -1,0 +1,125 @@
+<!-- TOOLBAR START -->
+<div fxLayout="row" fxLayoutAlign="center center" class="mat-typography" fxHide.gt-md>
+  <div fxLayout="column" fxFlex="100">
+
+    <mat-toolbar class="transparent">
+      <button mat-icon-button>
+        <mat-icon matTooltip="Voltar" (click)="goBack()">arrow_back</mat-icon>
+      </button>
+      <span>Contato</span>
+    </mat-toolbar>
+
+  </div>
+</div>  
+<!-- TOOLBAR END -->
+
+<div fxLayout="row" fxFill fxLayoutAlign="center start" ngClass.gt-sm="padding" class="mat-typography">
+  <div fxLayout="column" fxFlex="50" fxFlex.lt-md="100" fxLayoutGap="15px" class="padding">
+
+    <mat-card>
+      <mat-card-content>
+
+        <!-- FORM START -->
+        <form ngClass.gt-sm="big" 
+          fxLayout    = "column"  
+          (ngSubmit)  = "sendForm(contactForm)"
+          [formGroup] = "contactForm"           
+          #captchaProtectedForm="ngForm">
+
+          <mat-form-field appearance="standard">
+            <mat-label>Nome</mat-label>
+            <input matInput formControlName="name" required>
+            <mat-icon matSuffix>person</mat-icon>
+            <mat-error *ngFor="let validation of validationMessages.name">
+              <mat-error class="error-message" *ngIf="contactForm.get('name').hasError(validation.type) && (contactForm.get('name').dirty || contactForm.get('name').touched)">{{validation.message}}</mat-error>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="standard">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" required>
+            <mat-icon matSuffix>email</mat-icon>
+            <mat-error *ngFor="let validation of validationMessages.email">
+              <mat-error class="error-message" *ngIf="contactForm.get('email').hasError(validation.type) && (contactForm.get('email').dirty || contactForm.get('email').touched)">{{validation.message}}</mat-error>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="standard">
+            <mat-label>Telefone</mat-label>
+            <input matInput formControlName="phone">
+            <mat-icon matSuffix>phone</mat-icon>
+          </mat-form-field>
+          
+          <mat-form-field appearance="standard">
+            <mat-label>Mensagem</mat-label>
+            <textarea matInput formControlName="message" required
+                      cdkTextareaAutosize
+                      cdkAutosizeMinRows="2"
+                      cdkAutosizeMaxRows="5"></textarea>
+            <mat-icon matSuffix>description</mat-icon>
+            <mat-error *ngFor="let validation of validationMessages.message">
+              <mat-error class="error-message" *ngIf="contactForm.get('message').hasError(validation.type) && (contactForm.get('message').dirty || contactForm.get('message').touched)">{{validation.message}}</mat-error>
+            </mat-error>
+          </mat-form-field>
+
+
+          <div 
+            fxLayout            = "row" 
+            fxLayout.lt-md      = "column" 
+            fxLayoutAlign       = "space-between center" 
+            fxLayoutAlign.lt-md = "center center"
+            fxLayoutGap.lt-md   = "15px">
+            <div>
+              <re-captcha 
+                [formControlName]="'recaptcha'" 
+                siteKey="6LfCaXkUAAAAAOL0N49EHDDKwfdfPwwtKwkZ1TCo">
+              </re-captcha>
+            </div>
+            <div ngClass.lt-md="full-width">
+              <button fxFlex [disabled]="contactForm.invalid" mat-flat-button color="primary" type="submit">Enviar</button>
+            </div>
+          </div>
+
+        </form>
+        <!-- FORM END -->
+
+      </mat-card-content>
+    </mat-card>
+
+
+    <!-- SOCIAL START -->
+    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="10px">
+      <div fxLayout="row" fxLayoutGap="10px">
+        <a fxFlex.lt-md="50" mat-flat-button color="primary" 
+          style="background: #0077B5" 
+          matTooltip="https://linkedin.com/in/90lucasgabriel" 
+          href="https://linkedin.com/in/90lucasgabriel">
+            <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+        <a fxFlex.lt-md="50" mat-flat-button color="primary" 
+          style="background: #333333" 
+          matTooltip="https://github.com/90lucasgabriel" 
+          href="https://github.com/90lucasgabriel">
+            <i class="fab fa-github-alt"></i> Github
+        </a>
+      </div>
+      <div fxLayout="row" fxLayoutGap="10px">
+        <a fxFlex.lt-md="50" mat-flat-button color="primary" 
+          style="background: #3b5998" 
+          matTooltip="https://facebook.com/90lucasgabriel" 
+          href="https://facebook.com/90lucasgabriel">
+            <i class="fab fa-facebook"></i> Facebook
+        </a>
+      <a fxFlex.lt-md="50" mat-flat-button color="primary" 
+        style="background: #962fbf"
+        matTooltip="https://instagram.com/90lucasgabriel" 
+        href="https://instagram.com/90lucasgabriel">
+          <i class="fab fa-instagram"></i> Instagram
+      </a>
+      </div>
+    </div>
+    <!-- SOCIAL END -->
+
+    
+  </div>
+</div>

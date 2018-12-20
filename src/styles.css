@@ -1,0 +1,114 @@
+/* Add application styles & imports to this file! */
+/*@import "~@angular/material/prebuilt-themes/indigo-pink.css";*/
+/*@import "~@angular/material/prebuilt-themes/purple-green.css";*/
+
+
+/* COMMON -------------------------------------------- */
+body {
+  margin:         0;
+  overflow:       hidden;
+}
+
+* {
+  font-family:    'Roboto', sans-serif;
+}
+
+p {    
+  line-height:    25px;
+}
+
+.margin {
+  margin:         10px !important;
+}
+
+.padding {
+  padding:        10px !important;
+}
+
+.transparent {
+  background:     transparent !important;
+}
+
+.full-width {
+  min-width:      100%;
+  max-width:      100%;
+}
+
+/* BACKGROUND */
+div.background-triangles {
+  position:       absolute; 
+  z-index:        -1;  
+  min-height:     100%; 
+  min-width:      100%; 
+  max-width:      100wh; 
+  overflow-x:     hidden; 
+  overflow-y:     hidden;   
+}
+
+div.triangle-1 {
+  background:     #ffdfba /*#dcedc1*/;
+  position:       absolute; 
+  left:           200px; 
+  top:            -300px; 
+  min-height:     300%;
+  min-width:      300%;
+  transform:      rotate(-110deg); 
+}
+
+div.triangle-2 {
+  background:     #ff6f69 /*#a8e6cf*/;
+  position:       absolute; 
+  top:            200px;   
+  min-height:     300%; 
+  min-width:      300%;
+  transform:      rotate(-10deg); 
+}
+
+
+
+/* MATERIAL -------------------------------------------- */
+div.mat-card-image {
+  max-height:     300px; 
+  overflow:       hidden;
+}
+
+.mat-card-actions.bottom {
+  bottom:         16px;
+  position:       absolute;
+}
+
+mat-chip-list {
+  text-align:     center      !important;
+}
+
+.mat-chip-list-wrapper {
+  display:        block       !important;
+}
+
+mat-panel-title {
+  font-size:      small;
+}
+
+
+
+
+/* NGX-GALLERY -------------------------------------------- */
+.mat-sidenav-container, .mat-sidenav-content, .mat-tab-body-content {
+  transform:      none        !important;
+}
+
+gallery.details {
+  height:         350px       !important;
+  width:          100%        !important;
+  max-height:     45vh;
+}
+
+lightbox gallery-thumbs {
+  display: none;
+}
+
+/*.light-theme .mat-app-background, .light-theme.mat-app-background {
+    
+    color: rgba(0,0,0,0.87);
+    background-color: #009688 !important;
+}*/

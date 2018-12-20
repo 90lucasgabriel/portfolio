@@ -1,0 +1,47 @@
+<mat-progress-bar style="position: absolute; top: 0; z-index: 4" #progressBar *ngIf="progressBarVisible" 
+color="accent" mode="indeterminate"></mat-progress-bar>
+
+
+
+<div fxFlex class="main-content" id="main-content" ngClass.gt-md="top" ngClass.lt-lg="bottom">
+  <div class="background-triangles"> 
+    <div class="triangle-1"></div>
+    <div class="triangle-2"></div>
+  </div> 
+  <router-outlet (activate)='onActivate($event)'></router-outlet>
+</div>
+
+<nav mat-tab-nav-bar mat-stretch-tabs backgroundColor="primary" class="mat-tab-nav-bar"  ngClass.gt-md="top" ngClass.lt-lg="bottom">
+  
+  <a mat-tab-link fxFlex="10" disabled *ngIf="false">    
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <div fxLayout="column" fxFlex >
+        <div class="mat-input"> <mat-icon> {{ menu.icon }} </mat-icon> </div>
+        <div class="mat-caption"> Lucas Gabriel </div>
+      </div> 
+    </div>
+  </a>
+
+  <a mat-tab-link *ngFor="let menu of menus"
+    routerLinkActive #rla="routerLinkActive"
+    [active]="rla.isActive"
+    [routerLink]='menu.link'>
+    
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <div fxLayout="column" fxFlex >
+        <div class="mat-input"> <mat-icon> {{ menu.icon }} </mat-icon> </div>
+        <div class="mat-caption"> {{ menu.name }} </div>
+      </div> 
+    </div>
+  </a> 
+
+  <a mat-tab-link fxFlex="10" disabled *ngIf="false">
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <div fxLayout="column" fxFlex >
+        <div class="mat-input"> <mat-icon> </mat-icon> </div>
+        <div class="mat-caption">  </div>
+      </div> 
+    </div>
+  </a>
+
+</nav> 

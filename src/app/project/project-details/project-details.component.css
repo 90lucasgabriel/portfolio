@@ -1,0 +1,16 @@
+mat-card {
+  cursor:         default;
+}
+
+img.mat-card-image {
+  width:          auto !important;
+}
+
+.mat-card-image-overlay-details {
+  position:           absolute !important; 
+  margin-top:         0 !important; 
+  margin-left:        0 !important;
+  width:              100% !important; 
+  height:             200px !important; 
+  background:       rgba(0,0,0,0.4) !important;
+}

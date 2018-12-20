@@ -1,0 +1,70 @@
+<!-- LOADER START -->
+<ng-template #loading>
+  <div fxFlexFill fxLayoutAlign="center center">
+    <mat-progress-spinner mode="indeterminate" diameter="30" strokeWidth="4" color="primary"></mat-progress-spinner>
+  </div>
+</ng-template>
+<!-- LOADER END -->
+
+
+<!-- CONTENT OR LOADING START -->
+<div *ngIf="projectList | async as projectList; else loading">
+  <!-- TOOLBAR START -->
+  <div fxLayout="row" fxLayoutAlign="center center" class="mat-typography" fxHide.gt-md>
+    <div fxLayout="column" fxFlex="100">
+
+      <mat-toolbar class="transparent">
+        <button mat-icon-button>
+          <mat-icon matTooltip="Voltar" (click)="goBack()">arrow_back</mat-icon>
+        </button>
+        <span >Projetos</span>
+      </mat-toolbar>
+
+    </div>
+  </div>  
+  <!-- TOOLBAR END -->
+
+  <!-- SLIDER START -->
+  <div style="width: 100%; height: 300px; background: #999" *ngIf="false">
+
+  </div>
+  <!-- SLIDER END -->
+  
+  <!-- LAYOUT START -->
+    <div fxLayout="row" fxLayoutAlign="center start" class="mat-typography">
+      <div fxLayout="column" fxFlex="80" fxFlex.lt-md="100" fxLayoutGap="15px">
+    
+        <!-- CATEGORY START -->
+        <div *ngIf="false">
+          <div *ngFor="let category of categoryList | async">
+            {{ category.name }}
+          </div>
+        </div>
+        <!-- CATEGORY END -->
+
+        <!-- PROJECT START -->
+        <div fxLayout="row wrap" fxLayout.lt-lg="column" fxLayoutAlign="start">
+          
+          <div fxFlex.gt-md="50" *ngFor="let project of projectList" class="padding">
+            <mat-card [routerLink]="[project.id]">
+              <div mat-card-image>
+                <div *ngIf="project.image" class="mat-card-image mat-card-image-overlay"></div>
+                <img *ngIf="project.image" mat-card-image [src]="project.image" />
+                <div *ngIf="!project.image" style="width: 100%; height: 300px; background: #999"></div>
+              </div>
+              <mat-card-content>
+                <h2>{{ project.name }}</h2>                
+                <p>{{ project.abstract }}</p>
+              </mat-card-content>
+            </mat-card>
+          </div>
+
+        </div>
+        <!-- PROJECT END -->
+        
+    </div>
+  </div>
+  <!-- LAYOUT END -->
+
+</div>
+<!-- CONTENT OR LOADING END -->
