@@ -1,6 +1,6 @@
 
 # Portfolio
-This is an [Angular 7](http://angular.io/) + [Angular Material](https://material.angular.io/) application. 
+This is an [Angular 7](http://angular.io/) + [Angular Material](https://material.angular.io/) + [Cloud Firestore](https://firebase.google.com/docs/firestore) application. 
 
 
 ## Live Preview
