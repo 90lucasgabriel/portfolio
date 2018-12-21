@@ -40,3 +40,12 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+## Compiled JavaScript files
+/functions/**/*.js
+/functions/**/*.js.map
+
+# Typescript v1 declaration files
+/functions/typings/
+
+/functions/node_modules/

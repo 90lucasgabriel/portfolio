@@ -1,8 +1,8 @@
 {
-  "name": "portfolio",
-  "short_name": "portfolio",
-  "theme_color": "#1976d2",
-  "background_color": "#fafafa",
+  "name": "Lucas Gabriel Portfolio",
+  "short_name": "Lucas Portfolio",
+  "theme_color": "#009688",
+  "background_color": "#009688",
   "display": "standalone",
   "scope": "/",
   "start_url": "/",

@@ -17,6 +17,7 @@
   import { RecaptchaModule }            from 'ng-recaptcha';
   import { RecaptchaFormsModule }       from 'ng-recaptcha/forms';
   import { DragScrollModule }           from 'ngx-drag-scroll';
+  import { AngularFontAwesomeModule }   from 'angular-font-awesome';
 
   import { FirestoreService }           from './common/services/firestore.service';
   import { LoaderService }              from './common/services/loader.service';
@@ -49,6 +50,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     RecaptchaModule,
     RecaptchaFormsModule,
     DragScrollModule,
+    AngularFontAwesomeModule,
 
     AboutModule,
     ContactModule,

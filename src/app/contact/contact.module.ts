@@ -6,6 +6,7 @@
   import { MaterialModule }             from '../material/material.module';
   import { RecaptchaModule }            from 'ng-recaptcha';
   import { RecaptchaFormsModule }       from 'ng-recaptcha/forms';
+  import { AngularFontAwesomeModule }   from 'angular-font-awesome';
 
   import { ContactRoutingModule }       from './contact-routing.module';
   import { ContactService }             from './contact.service';
@@ -20,6 +21,7 @@
     MaterialModule,
     RecaptchaModule,
     RecaptchaFormsModule,
+    AngularFontAwesomeModule,
     
     ContactRoutingModule
   ],

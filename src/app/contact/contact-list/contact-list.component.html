@@ -3,7 +3,7 @@
   <div fxLayout="column" fxFlex="100">
 
     <mat-toolbar class="transparent">
-      <button mat-icon-button>
+      <button mat-icon-button aria-label="Back" role="button">
         <mat-icon matTooltip="Voltar" (click)="goBack()">arrow_back</mat-icon>
       </button>
       <span>Contato</span>
@@ -76,7 +76,7 @@
               </re-captcha>
             </div>
             <div ngClass.lt-md="full-width">
-              <button fxFlex [disabled]="contactForm.invalid" mat-flat-button color="primary" type="submit">Enviar</button>
+              <button fxFlex [disabled]="contactForm.invalid"  aria-label="Submit" role="button" mat-flat-button color="primary" type="submit">Enviar</button>
             </div>
           </div>
 
@@ -94,13 +94,13 @@
           style="background: #0077B5" 
           matTooltip="https://linkedin.com/in/90lucasgabriel" 
           href="https://linkedin.com/in/90lucasgabriel">
-            <i class="fab fa-linkedin"></i> LinkedIn
+            <fa name="linkedin-square"></fa> LinkedIn
         </a>
         <a fxFlex.lt-md="50" mat-flat-button color="primary" 
           style="background: #333333" 
           matTooltip="https://github.com/90lucasgabriel" 
           href="https://github.com/90lucasgabriel">
-            <i class="fab fa-github-alt"></i> Github
+            <fa name="github-alt"></fa> Github
         </a>
       </div>
       <div fxLayout="row" fxLayoutGap="10px">
@@ -108,13 +108,13 @@
           style="background: #3b5998" 
           matTooltip="https://facebook.com/90lucasgabriel" 
           href="https://facebook.com/90lucasgabriel">
-            <i class="fab fa-facebook"></i> Facebook
+            <fa name="facebook-square"></fa> Facebook
         </a>
       <a fxFlex.lt-md="50" mat-flat-button color="primary" 
         style="background: #962fbf"
         matTooltip="https://instagram.com/90lucasgabriel" 
         href="https://instagram.com/90lucasgabriel">
-          <i class="fab fa-instagram"></i> Instagram
+          <fa name="instagram"></fa> Instagram
       </a>
       </div>
     </div>

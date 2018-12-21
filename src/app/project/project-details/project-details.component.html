@@ -17,7 +17,7 @@
   
       <div fxFlex>
         <mat-toolbar class="transparent">
-          <button mat-icon-button (click)="goBack()">
+          <button mat-icon-button (click)="goBack()" aria-label="Back" role="button">
             <mat-icon matTooltip="Voltar">arrow_back</mat-icon>
           </button>
           <span style="font-size: medium">{{ project.name }}</span>
@@ -88,10 +88,10 @@
         </mat-toolbar>
 
         <div fxHide.lt-md="true" class="full-width" style="z-index: 2; position: relative">
-          <button mat-fab color="primary" (click)="moveLeft()" style="position: absolute; top: 150px; left: -22px;">
+          <button mat-fab color="primary" (click)="moveLeft()" style="position: absolute; top: 150px; left: -22px;" aria-label="Carousel left" role="button">
             <mat-icon aria-label="Left">keyboard_arrow_left</mat-icon>
           </button>
-          <button mat-fab color="primary" (click)="moveRight()" style="position: absolute; top: 150px; right: -25px;">
+          <button mat-fab color="primary" (click)="moveRight()" style="position: absolute; top: 150px; right: -25px;" aria-label="Carousel Right" role="button">
             <mat-icon aria-label="Right">keyboard_arrow_right</mat-icon>
           </button>
         </div>
@@ -100,7 +100,7 @@
             <mat-card  [routerLink]="['/project/',project.id]">
               <div mat-card-image style="height: 200px;">
                 <div *ngIf="project.image" class="mat-card-image mat-card-image-overlay-details"></div>
-                <img *ngIf="project.image" mat-card-image [src]="project.image" style="height: 250px;" />
+                <img *ngIf="project.image" mat-card-image [src]="project.image" style="height: 250px;" alt="Image preview" />
                 
                 <div *ngIf="!project.image" style="width: 100%; height: 200px; background: #999"></div>
               </div>
