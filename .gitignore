@@ -51,4 +51,3 @@ Thumbs.db
 /functions/node_modules/
 .firebase/*.cache
 *.cache
-/.firebase
