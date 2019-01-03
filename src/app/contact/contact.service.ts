@@ -23,6 +23,8 @@ export class ContactService {
 
 // METHODS -------------------------------------------------------
   public add(ref: string, data: Contact) {
+    console.log('ref', ref);
+    console.log('data', data);
     return this.fs.add(ref, data);
   }
 
