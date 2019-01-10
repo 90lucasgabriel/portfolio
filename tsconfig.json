@@ -26,6 +26,7 @@
       "@r-about/*":             ["app/about/*"],
       "@r-contact/*":           ["app/contact/*"],
       "@r-project/*":           ["app/project/*"],
+      "@r-tag/*":               ["app/tag/*"],
       "@r-material/*":          ["app/material/*"],
       "@r-environment/*":       ["environments/*"]
     }

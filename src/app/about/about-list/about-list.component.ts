@@ -3,6 +3,12 @@ import { trigger, state, style, animate, transition }   from '@angular/animation
 import { SelectionModel }         from '@angular/cdk/collections';
 import { Router }                 from '@angular/router';
   import { Location }             from '@angular/common';
+import { Observable, from }             from 'rxjs';
+import { AboutService }           from '../about.service';
+import * as moment from 'moment';
+import { TagService } from '@r-app/tag/tag.service';
+import { Tag } from '@r-app/tag/tag.model';
+import { filter, map } from 'rxjs/operators';
 //import { ANIMATION }              from '../material/material-animation';
 
 //import { MaterialService }        from '../material/material.service';
@@ -27,57 +33,43 @@ import { Router }                 from '@angular/router';
   encapsulation:      ViewEncapsulation.None,
   //animations:         [ ANIMATION ]
 })
-export class AboutListComponent implements OnInit, OnDestroy, AfterViewInit {
+export class AboutListComponent implements OnInit {
 // DECLARATIONS --------------------------
   private sub:        any;
   loading:            boolean;
-  showFilter:         boolean;
-  actionClick:        boolean;
-  centerContent:      boolean;
+  aboutList:          Observable<any[]>;
+  tagList:            Observable<Tag[]>;
 
 
 
-
+  
 // MAIN ----------------------------------
   /**
    * Execute before onInit
    */
   private start() {
-    this.actionClick    = false;
-    this.centerContent  = false;
-    this.showFilter     = false;
+    this.aboutList      = this.service.colWithSubcollections(['courses', 'education', 'work', 'social']);
+    this.tagList        = this.tagService.queryFeatured();
   }
-
-  /**
-   * Execute after load all components
-   */
-  public ngAfterViewInit() {
-    /* Verify if sidenav is opened
-    Observable.merge(this.parent.sidenav.openedChange)
-      .subscribe(data => {
-        this.centerContent = !data;
-      });*/
-
-  }
+  
 
 
 
 // OTHERS --------------------------------
   /**
-   * Creates an instance of AboutListComponent.
-   * @param {AppComponent} parent
+   *Creates an instance of AboutListComponent.
    * @param {Router} router
+   * @param {Location} location
    * @param {AboutService} service
-   * @param {MaterialService} material
-   * @param {LoaderService} loader
+   * @param {TagService} tagService
    * @memberof AboutListComponent
    */
   constructor(
     //@Inject(AppComponent) private parent: AppComponent,
     private router:           Router,
     private location:         Location,
-    //private service:    AboutService,
-    //private material:   MaterialService
+    private service:          AboutService,
+    private tagService:       TagService
   ) {
     this.start();
   }
@@ -95,12 +87,5 @@ export class AboutListComponent implements OnInit, OnDestroy, AfterViewInit {
    */
   public ngOnInit() {
 
-  }
-
-  /**
-   * Execute on destroy
-   */
-  public ngOnDestroy() {
-    // this.sub.unsubscribe();
   }
 }

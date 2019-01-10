@@ -1,254 +1,156 @@
-<!-- TOOLBAR START -->
-<div fxLayout="row" fxLayoutAlign="center center" class="mat-typography" fxHide.gt-md>
-  <div fxLayout="column" fxFlex="100">
-
-    <mat-toolbar class="transparent">
-      <button mat-icon-button aria-label="Back" role="button">
-        <mat-icon matTooltip="Voltar" (click)="goBack()">arrow_back</mat-icon>
-      </button>
-      <span >Lucas Gabriel Teixeira</span>
-    </mat-toolbar>
-
+<!-- LOADER START -->
+<ng-template #loading>
+  <div fxFlexFill fxLayoutAlign="center center">
+    <mat-progress-spinner mode="indeterminate" diameter="30" strokeWidth="4" color="primary"></mat-progress-spinner>
   </div>
-</div>  
-<!-- TOOLBAR END -->
-
-<!-- LAYOUT START -->
-<div fxLayout="row" fxLayoutAlign="center start" class="mat-typography" ngStyle.gt-md="margin-top: 25px">
-  <div fxLayout="column" fxFlex="80" fxFlex.lt-md="100" fxLayoutGap="25px">
-    <!-- PROJECT START -->        
-    <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign="center center" fxLayoutGap="25px" class="padding">
-      <div fxFlex.gt-md="30" class="padding">
-
-        <div style="overflow: hidden; height: 200px; width: 200px; background: #CCC; border-radius: 100%">
-          <img style="height: 200px" src="https://firebasestorage.googleapis.com/v0/b/portfolio-90lucasgabriel.appspot.com/o/images%2Fpp.jpg?alt=media&token=b3d0eb54-8398-45f5-ba30-7f7a78a42523" alt="Profile picture" />
-        </div>
-      </div>
-
-      <div fxLayout="column" ngClass.lt-lg="full-width">
-        <h1>Lucas Gabriel Teixeira</h1>
-        <p>28 anos</p>
-        <p>Bacharel em Ciência da Computação pela Universidade Federal do ABC (UFABC)</p>
-        <p>Bacharel em Ciência & Tecnologia pela Universidade Federal do ABC (UFABC)</p>
-        <p>Desenvolvedor de Sistemas em DXC Technology</p>
-        
-        <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="10px">
-          <div fxLayout="row" fxLayoutGap="10px">
-            <a fxFlex.lt-md="50" mat-flat-button color="primary" 
-              style="background: #0077B5" 
-              matTooltip="https://linkedin.com/in/90lucasgabriel" 
-              href="https://linkedin.com/in/90lucasgabriel">
-                <fa name="linkedin-square"></fa> LinkedIn
-            </a>
-            <a fxFlex.lt-md="50" mat-flat-button color="primary" 
-              style="background: #333333" 
-              matTooltip="https://github.com/90lucasgabriel" 
-              href="https://github.com/90lucasgabriel">
-                <fa name="github-alt"></fa> Github
-            </a>
-          </div>
-          <div fxLayout="row" fxLayoutGap="10px">
-            <a fxFlex.lt-md="50" mat-flat-button color="primary" 
-              style="background: #3b5998" 
-              matTooltip="https://facebook.com/90lucasgabriel" 
-              href="https://facebook.com/90lucasgabriel">
-                <fa name="facebook-square"></fa> Facebook
-            </a>
-          <a fxFlex.lt-md="50" mat-flat-button color="primary" 
-            style="background: #962fbf"
-            matTooltip="https://instagram.com/90lucasgabriel" 
-            href="https://instagram.com/90lucasgabriel">
-              <fa name="instagram"></fa> Instagram
-          </a>
-          </div>
-        </div>
-      </div>
-      
-    </div>
+</ng-template>
+<!-- LOADER END -->
 
 
-    <!-- PROJECT START -->        
-    <div fxLayout="column" fxLayoutGap="25px" class="padding">
-      <mat-chip-list>
-        <mat-chip color="primary" selected >Angular</mat-chip>
-        <mat-chip color="primary" selected >Ionic</mat-chip>  
-        <mat-chip color="primary" selected >Javascript</mat-chip>              
-        <mat-chip color="primary" selected >Angular Material</mat-chip>
-        <mat-chip color="primary" selected >Bootstrap</mat-chip>
-        <mat-chip color="primary" selected >CSS</mat-chip>
-        <mat-chip color="primary" selected >PHP</mat-chip>
-        <mat-chip color="primary" selected >Laravel Framework</mat-chip>
-        <mat-chip color="primary" selected >C#</mat-chip>
-        <mat-chip color="primary" selected >MySQL</mat-chip>
-        <mat-chip color="primary" selected >Oracle</mat-chip>
-        <mat-chip color="primary" selected >SQL Server</mat-chip>
-        <mat-chip color="primary" selected >Firebase</mat-chip>
-      </mat-chip-list>
-      
-      <!-- RESUME START -->
-      <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutGap="25px">
-        
-        <div fxFlex.gt-md="50">  
-              <div fxLayout="column" fxLayoutGap="25px">
-                
-                <!-- DXC START -->
-                <mat-expansion-panel expanded="true">
-                  <mat-expansion-panel-header>
-                    <mat-panel-title fxHide.lt-md="true">
-                      05/2016 - hoje
-                    </mat-panel-title>
-                    <mat-panel-description>
-                      Desenvolvedor de Sistemas Jr
-                    </mat-panel-description>
-                  </mat-expansion-panel-header>
-                  <div fxLayout="column">
-                    <div>
-                      <h3>DXC Technology (Multinacional)</h3>
-                      <p fxHide.gt-sm="true">05/2016 - hoje</p>
-                      <p>- Maior parte das atividades com foco no back-end, mas também alto desenvolvimento no front-end com HTML5, Javascript, jQuery e CSS;</p>
-                      <p>- Desenvolvimento e manutenção com SAP Hana, Oracle, Javascript, Java e CSS.</p>
-                      <p>- Alocação: Volkswagen Brasil, Scania Brasil, Santander e Petrobrás;</p>  
-                    </div>
-                  </div>
-                </mat-expansion-panel>
-                <!-- DXC END -->
-
-
-                <!-- TRIPLETECH START -->
-                <mat-expansion-panel expanded="true">
-                  <mat-expansion-panel-header>
-                    <mat-panel-title fxHide.lt-md="true">
-                      02/2015 - 05/2016
-                    </mat-panel-title>
-                    <mat-panel-description>
-                      Analista Programador Jr.
-                    </mat-panel-description>
-                  </mat-expansion-panel-header>                    
-                  <div fxLayout="column">
-                    <div>
-                      <h3>Tripletech IT Solutions (Médio Porte)</h3>
-                      <p fxHide.gt-sm="true">07/2011 - 07/2013</p>
-                      <p>- Projeto utilizado no TCC da UFABC e se tornou o modelo de relatório para TCC da computação na universidade;</p>
-                      <p>- Desenvolvimento de aplicações MVC.NET com API RESTful C# e front-end com AngularJS, HTML5, CSS, Bootstrap e Angular Material Design e banco de dados SQL Server. Atuação com foco no front-
-  end, desde o design até a estruturação, comunicação com a API e alimentação das telas com as informações do banco de dados;</p>
-                      <p>- Manutenção de sistemas PHP com correções e criação de novas funcionalidades básicas;</p>  
-                      <p>- Alocação: Faculdade de Direito São Bernardo</p>
-                    </div>
-                    <div fxLayout.lt-md="column" fxLayoutGap="15px">
-                      <a fxFlex mat-stroked-button color="primary" href="https://youtu.be/uXsNBhH_a40" target="_blank" rel="noreferrer"><mat-icon>play_circle_outline</mat-icon>Vídeo Demonstração</a>
-                      <a fxFlex mat-stroked-button color="primary" href="https://firebasestorage.googleapis.com/v0/b/portfolio-90lucasgabriel.appspot.com/o/files%2Frelatorio-tripletech.pdf?alt=media&token=eafcb5a1-be72-41cc-9f81-dc9ab47ff331" target="_blank" rel="noreferrer"><mat-icon>description</mat-icon>Relatório das atividades</a>
-                    </div>
-                  </div>
-                </mat-expansion-panel>
-                <!-- TRIPLETECH END -->
-
-
-                <!-- METAGAL START -->
-                <mat-expansion-panel expanded="true">
-                  <mat-expansion-panel-header>
-                    <mat-panel-title fxHide.lt-md="true">
-                      07/2011 - 07/2013
-                    </mat-panel-title>
-                    <mat-panel-description>
-                      Estagiário em TI
-                    </mat-panel-description>
-                  </mat-expansion-panel-header>
-                  <div fxLayout="column">
-                    <div>
-                      <h3>Metagal Comércio e Indústria ltda. (Multinacional)</h3>
-                      <p fxHide.gt-sm="true">07/2011 - 07/2013</p>
-                      <p>- Desenvolvimento de aplicações em VB e C#.NET com MVC;</p>
-                      <p>- Manipulação em banco de dados Oracle, criação de procedures e desenvolvimento de consultas;</p>
-                      <p>- Desenvolvimento completo do site https://www.metagal.com.br em PHP, HTML, Javascript e MySQL.</p>
-                    </div>
-                    <div fxLayout.lt-md="column" fxLayoutGap="15px">
-                      <a fxFlex mat-stroked-button color="primary" href="https://firebasestorage.googleapis.com/v0/b/portfolio-90lucasgabriel.appspot.com/o/files%2Frelatorio-metagal.pdf?alt=media&token=aef20318-00f9-4f32-ab07-886193087d77" target="_blank" rel="noreferrer"><mat-icon>description</mat-icon>Relatório das atividades</a>
-                    </div>
-                  </div>
-                </mat-expansion-panel>
-                <!-- METAGAL END -->
-
-              </div>
-        </div>
-
-        <!-- RIGHT COLUMN START -->
-        <div fxLayout="column" fxLayoutGap="25px" fxFlex.gt-md="50"> 
-
-          <!-- HIGH SCOOL START -->
-          <mat-card>
-            <mat-card-content>
-              <h2>Formação Acadêmica</h2>
-              <div fxLayout="column" fxLayoutGap="25px">
-                <div fxLayout="row wrap">
-                  <div fxFlex="100" fxFlex.gt-md="20">Escolaridade</div>
-                  <div fxFlex="100" fxFlex.gt-md="80">Formação Superior Completa</div>
-                </div>
-                <div fxLayout="row wrap">
-                  <div fxFlex="100" fxFlex.gt-md="20">2009 - 2015</div>
-                  <div fxFlex="100" fxFlex.gt-md="80">Graduação, Universidade Federal do ABC (UFABC)</div>
-                  <div fxFlex="100" fxFlexOffset.gt-md="20">- Bacharelado em Ciência da Computação</div>
-                </div>
-                <div fxLayout="row wrap">
-                  <div fxFlex="100" fxFlex.gt-md="20">2009 - 2014</div>
-                  <div fxFlex="100" fxFlex.gt-md="80">Graduação, Universidade Federal do ABC (UFABC)</div>
-                  <div fxFlex="100" fxFlexOffset.gt-md="20">- Bacharelado em Ciência & Tecnologia</div>
-                </div>
-                <div fxLayout="row wrap">
-                  <div fxFlex="100" fxFlex.gt-md="20">2008 - 2009</div>
-                  <div fxFlex="100" fxFlex.gt-md="80">Técnico, ETEC Lauro Gomes</div>
-                  <div fxFlex="100" fxFlexOffset.gt-md="20">- Informática</div>
-                </div>
-              </div>
-            </mat-card-content>
-          </mat-card>
-          <!-- HIGH SCOOL END-->
-
-          <!-- COURSES START -->
-          <mat-card>
-            <mat-card-content>
-              <h2>Cursos Complementares</h2>
-              <div fxLayout="column" fxLayoutGap="25px">
-                <div fxLayout="row wrap">
-                  <div fxFlex="100" fxFlex.gt-md="20">02/2017</div>
-                  <div fxFlex="100" fxFlex.gt-md="80">Angular 2 + PHP Laravel Framework (Avançado)</div>
-                  <div fxFlex="100" fxFlexOffset.gt-md="20">- School of Net</div>
-                </div>
-                <div fxLayout="row wrap">
-                  <div fxFlex="100" fxFlex.gt-md="20">06/2016</div>
-                  <div fxFlex="100" fxFlex.gt-md="80">Microsft TypeScript</div>
-                  <div fxFlex="100" fxFlexOffset.gt-md="20">- School of Net</div>
-                </div>
-                <div fxLayout="row wrap">
-                  <div fxFlex="100" fxFlex.gt-md="20">03/2016</div>
-                  <div fxFlex="100" fxFlex.gt-md="80">PHP Laravel Framework + Ionic + Cordova</div>
-                  <div fxFlex="100" fxFlexOffset.gt-md="20">- School of Net</div>
-                </div>
-                <div fxLayout="row wrap">
-                  <div fxFlex="100" fxFlex.gt-md="20">01/2016</div>
-                  <div fxFlex="100" fxFlex.gt-md="80">PHP Laravel Framework + AngularJS</div>
-                  <div fxFlex="100" fxFlexOffset.gt-md="20">- School of Net</div>
-                </div>
-                <div fxLayout="row wrap">
-                  <div fxFlex="100" fxFlex.gt-md="20">08/2015</div>
-                  <div fxFlex="100" fxFlex.gt-md="80">Git e Github</div>
-                  <div fxFlex="100" fxFlexOffset.gt-md="20">- School of Net</div>
-                </div>
-              </div>
-            </mat-card-content>
-          </mat-card>
-          <!-- COURSES END -->
-
-          <div></div>
-
-        </div>
-        <!-- RIGHT COLUMN END -->
-
-      </div>
-      <!-- RESUME END -->
-                      
-    </div>
-    <!-- PROJECT END -->
   
+
+<!-- CONTENT OR LOADING START -->
+<div *ngIf="aboutList | async as aboutList; else loading">
+  <!-- TOOLBAR START -->
+  <div fxLayout="row" fxLayoutAlign="center center" class="mat-typography" fxHide.gt-md>
+    <div fxLayout="column" fxFlex="100">
+
+      <mat-toolbar class="transparent">
+        <button mat-icon-button aria-label="Back" role="button">
+          <mat-icon matTooltip="Voltar" (click)="goBack()">arrow_back</mat-icon>
+        </button>
+        <span >{{aboutList[0].name}}</span>
+      </mat-toolbar>
+
+    </div>
+  </div>  
+  <!-- TOOLBAR END -->
+
+  <!-- LAYOUT START -->
+  <div fxLayout="row" fxLayoutAlign="center start" class="mat-typography" ngStyle.gt-md="margin-top: 25px">
+    <div fxLayout="column" fxFlex="80" fxFlex.lt-md="100" fxLayoutGap="25px">
+      
+      <div *ngFor="let item of aboutList">
+      
+      <!-- PROJECT START -->        
+      <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign="center center" fxLayoutGap="25px" class="padding">
+        <div fxFlex.gt-md="30" class="padding">
+
+          <div style="overflow: hidden; height: 200px; width: 200px; background: #CCC; border-radius: 100%">
+            <img  style="height: 200px" [src]="item.picture" alt="Profile picture" />
+          </div>
+        </div>
+
+        <div fxLayout="column" ngClass.lt-lg="full-width">
+          <h1>{{item.name}}</h1>
+          <p>{{item.birthdate | timestampToDate | age}} anos</p>
+          <p *ngFor="let featured of item.featured">{{featured}}</p>
+          
+          <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="10px">
+            <div fxLayout="row" fxLayoutGap="10px">
+              <a *ngFor="let s of item.social" fxFlex.lt-md="50" 
+                mat-flat-button 
+                color="primary"
+                [style.background]="s.color" 
+                [matTooltip]="s.url" 
+                [href]="s.url">
+                  <fa [name]="s.icon"></fa> {{s.name}}
+              </a>            
+            </div>          
+          </div>
+        </div>
+        
+      </div>
+
+
+      <!-- PROJECT START -->        
+      <div fxLayout="column" fxLayoutGap="25px" class="padding">
+        <mat-chip-list>
+          <mat-chip *ngFor="let tag of tagList | async | orderBy:'index'" color="primary" selected >{{tag.name}}</mat-chip>
+        </mat-chip-list>
+        
+        <!-- RESUME START -->
+        <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutGap="25px">
+          
+          <div fxFlex.gt-md="50">  
+                <div fxLayout="column" fxLayoutGap="25px">
+                  
+                  <!-- WORK EXPERIENCE START -->
+                  <mat-expansion-panel expanded="true" *ngFor="let w of item.work | orderBy:'dueDate':true">
+                    <mat-expansion-panel-header>
+                      <mat-panel-title fxHide.lt-md="true">
+                        {{w.startDate | timestampToDate:'MM/YYYY'}} - {{w.dueDate?(w.dueDate | timestampToDate:'MM/YYYY'):'hoje'}}
+                      </mat-panel-title>
+                      <mat-panel-description>
+                        {{w.position}}
+                      </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <div fxLayout="column">
+                      <div>
+                        <h3>{{w.company}} ({{w.companyLevel}})</h3>
+                        <p fxHide.gt-sm="true">{{w.startDate | timestampToDate:'MM/YYYY'}} - {{w.dueDate?(w.dueDate | timestampToDate:'MM/YYYY'):'hoje'}}</p>
+                        <p *ngFor="let activity of w.activities">- {{activity}};</p>
+                      </div>
+                      <div fxLayout.lt-md="column" fxLayoutGap="15px">
+                        <a *ngFor="let r of w.ref" fxFlex mat-stroked-button color="primary" [href]="r.url" target="_blank" rel="noreferrer"><mat-icon>{{r.icon}}</mat-icon>{{r.description}}</a>
+                      </div>
+                    </div>
+                  </mat-expansion-panel>
+                  <!-- WORK EXPERIENCE END -->
+                </div>
+          </div>
+
+          <!-- RIGHT COLUMN START -->
+          <div fxLayout="column" fxLayoutGap="25px" fxFlex.gt-md="50"> 
+
+            <!-- EDUCATION START -->
+            <mat-card>
+              <mat-card-content>
+                <h2>Formação Acadêmica</h2>
+                <div fxLayout="column" fxLayoutGap="25px">
+                  <div fxLayout="row wrap">
+                    <div fxFlex="100" fxFlex.gt-md="80">{{item.educationDegree}}</div>
+                  </div>
+                  <div fxLayout="row wrap" *ngFor="let e of item.education | orderBy:'dueDate':true">
+                    <div fxFlex="100" fxFlex.gt-md="20">{{e.startDate | timestampToDate:'YYYY'}} - {{e.dueDate?(e.dueDate | timestampToDate:'YYYY'):'hoje'}}</div>
+                    <div fxFlex="100" fxFlex.gt-md="80">{{e.course}}</div>
+                    <div fxFlex="100" fxFlexOffset.gt-md="20">- {{e.degree}}, {{e.institution}}</div>
+                  </div>
+                </div>
+              </mat-card-content>
+            </mat-card>
+            <!-- EDUCATION END-->
+
+            <!-- COURSES START -->
+            <mat-card>
+              <mat-card-content>
+                <h2>Cursos Complementares</h2>
+                <div fxLayout="column" fxLayoutGap="25px">
+                  <div fxLayout="row wrap" *ngFor="let c of item.courses | orderBy:'dueDate':true">
+                    <div fxFlex="100" fxFlex.gt-md="20">{{c.dueDate | timestampToDate:'MM/YYYY'}}</div>
+                    <div fxFlex="100" fxFlex.gt-md="80">{{c.name}}</div>
+                    <div fxFlex="100" fxFlexOffset.gt-md="20">- {{c.institution}}</div>
+                  </div>
+                </div>
+              </mat-card-content>
+            </mat-card>
+            <!-- COURSES END -->
+
+            <div></div>
+
+          </div>
+          <!-- RIGHT COLUMN END -->
+
+        </div>
+        <!-- RESUME END -->
+                        
+      </div>
+      <!-- PROJECT END -->
+    </div>
+
+    </div>
   </div>
+  <!-- LAYOUT END -->
+
 </div>
-<!-- LAYOUT END -->
+<!-- CONTENT OR LOADING END -->

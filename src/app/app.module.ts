@@ -18,6 +18,8 @@
   import { RecaptchaFormsModule }       from 'ng-recaptcha/forms';
   import { DragScrollModule }           from 'ngx-drag-scroll';
   import { AngularFontAwesomeModule }   from 'angular-font-awesome';
+  import { OrderModule }                from 'ngx-order-pipe';
+
 
   import { FirestoreService }           from './common/services/firestore.service';
   import { LoaderService }              from './common/services/loader.service';
@@ -30,7 +32,7 @@
   import { CategoryModule }             from './category/category.module'; 
 
   import { AppComponent }               from './app.component';
-import { ServiceWorkerModule } from '@angular/service-worker'; 
+  import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   imports:      [     
@@ -51,6 +53,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     RecaptchaFormsModule,
     DragScrollModule,
     AngularFontAwesomeModule,
+    OrderModule,
 
     AboutModule,
     ContactModule,
