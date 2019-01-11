@@ -4,7 +4,7 @@
 /dist
 /tmp
 /out-tsc
-.firebase
+/.firebase
 
 # environments
 src/environments/environment.ts
@@ -55,6 +55,7 @@ Thumbs.db
 
 /functions/node_modules/
 .firebase/*.cache
+/.firebase/*.cache
 *.cache
 
 
