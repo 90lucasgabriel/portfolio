@@ -1,12 +1,12 @@
 // IMPORTS -----------------------------------------------------
+  // ANGULAR ----------
   import { Injectable }                 from '@angular/core';
-  import { AngularFirestore, AngularFirestoreCollection, DocumentSnapshot } from '@angular/fire/firestore';
-  import { Observable, combineLatest }  from 'rxjs';
-  import { map, switchMap }             from 'rxjs/operators';
+  import { AngularFirestoreCollection } from '@angular/fire/firestore';
+  import { Observable }                 from 'rxjs';
 
-  import { Category }                   from './category.model';
-  import { Project, ProjectImages }     from '../project/project.model';
-  import { FirestoreService }           from '../common/services/firestore.service';
+  // OWNER ------------
+  import { Category }                   from '@r-category/category.model';
+  import { FirestoreService }           from '@r-services/firestore.service';
 
 
 

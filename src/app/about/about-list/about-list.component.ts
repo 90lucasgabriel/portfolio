@@ -1,26 +1,21 @@
-import { Component, OnInit, OnDestroy, ViewEncapsulation, AfterViewInit, ViewChild, Host, Inject } from '@angular/core';
-import { trigger, state, style, animate, transition }   from '@angular/animations';
-import { SelectionModel }         from '@angular/cdk/collections';
-import { Router }                 from '@angular/router';
-  import { Location }             from '@angular/common';
-import { Observable, from }             from 'rxjs';
-import { AboutService }           from '../about.service';
-import * as moment from 'moment';
-import { TagService } from '@r-app/tag/tag.service';
-import { Tag } from '@r-app/tag/tag.model';
-import { filter, map } from 'rxjs/operators';
-//import { ANIMATION }              from '../material/material-animation';
+// IMPORTS ---------------------------------
+  // ANGULAR -----
+  import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+  import { Router }                       from '@angular/router';
+  import { Location }                     from '@angular/common';
+  import { Observable }                   from 'rxjs';
+  
+  // OWNER -----
+  import { About }                        from '@r-about/about.model';
+  import { Tag }                          from '@r-tag/tag.model';
+  import { AboutService }                 from '@r-about/about.service';
+  import { TagService }                   from '@r-app/tag/tag.service';
 
-//import { MaterialService }        from '../material/material.service';
-//import { AppComponent }           from '@r-app/app.component';
 
-//import { AboutService }        from './about.service';
-
-//import { Observable } from 'rxjs';
 
 
 /**
- * List About
+ * About List Component
  *
  * @export
  * @class AboutListComponent
@@ -31,14 +26,12 @@ import { filter, map } from 'rxjs/operators';
   templateUrl:        './about-list.component.html',
   styleUrls:          ['./about-list.component.css'],
   encapsulation:      ViewEncapsulation.None,
-  //animations:         [ ANIMATION ]
 })
 export class AboutListComponent implements OnInit {
 // DECLARATIONS --------------------------
-  private sub:        any;
-  loading:            boolean;
-  aboutList:          Observable<any[]>;
-  tagList:            Observable<Tag[]>;
+  public loading:            boolean;
+  public aboutList:          Observable<About[]>;
+  public tagList:            Observable<Tag[]>;
 
 
 
@@ -46,6 +39,9 @@ export class AboutListComponent implements OnInit {
 // MAIN ----------------------------------
   /**
    * Execute before onInit
+   *
+   * @private
+   * @memberof AboutListComponent
    */
   private start() {
     this.aboutList      = this.service.colWithSubcollections(['courses', 'education', 'work', 'social']);
@@ -71,21 +67,23 @@ export class AboutListComponent implements OnInit {
     private service:          AboutService,
     private tagService:       TagService
   ) {
-    this.start();
   }
-
-  /**
-   * Go to latest route
-   */
-  public goBack() {
-    this.location.back();
-  }
-
 
   /**
    * Execute on init
+   *
+   * @memberof AboutListComponent
    */
   public ngOnInit() {
-
+    this.start();
+  }
+  
+  /**
+   * Go to latest route
+   *
+   * @memberof AboutListComponent
+   */
+  public goBack() {
+    this.location.back();
   }
 }

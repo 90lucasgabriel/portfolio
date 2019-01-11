@@ -27,6 +27,7 @@ import {
   MatTooltipModule
 } from '@angular/material';
 import { FlexLayoutModule }           from '@angular/flex-layout';
+import { MaterialService }            from './material.service';
 
 @NgModule({
   imports: [
@@ -85,6 +86,7 @@ import { FlexLayoutModule }           from '@angular/flex-layout';
     FlexLayoutModule
   ],
   declarations: [],
-  entryComponents: []
+  entryComponents: [],
+  providers: [MaterialService]
 })
 export class MaterialModule { }

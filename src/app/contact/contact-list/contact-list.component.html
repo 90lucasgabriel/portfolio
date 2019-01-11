@@ -88,35 +88,19 @@
 
 
     <!-- SOCIAL START -->
-    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="10px">
-      <div fxLayout="row" fxLayoutGap="10px">
-        <a fxFlex.lt-md="50" mat-flat-button color="primary" 
-          style="background: #0077B5" 
-          matTooltip="https://linkedin.com/in/90lucasgabriel" 
-          href="https://linkedin.com/in/90lucasgabriel">
-            <fa name="linkedin-square"></fa> LinkedIn
-        </a>
-        <a fxFlex.lt-md="50" mat-flat-button color="primary" 
-          style="background: #333333" 
-          matTooltip="https://github.com/90lucasgabriel" 
-          href="https://github.com/90lucasgabriel">
-            <fa name="github-alt"></fa> Github
-        </a>
-      </div>
-      <div fxLayout="row" fxLayoutGap="10px">
-        <a fxFlex.lt-md="50" mat-flat-button color="primary" 
-          style="background: #3b5998" 
-          matTooltip="https://facebook.com/90lucasgabriel" 
-          href="https://facebook.com/90lucasgabriel">
-            <fa name="facebook-square"></fa> Facebook
-        </a>
-      <a fxFlex.lt-md="50" mat-flat-button color="primary" 
-        style="background: #962fbf"
-        matTooltip="https://instagram.com/90lucasgabriel" 
-        href="https://instagram.com/90lucasgabriel">
-          <fa name="instagram"></fa> Instagram
-      </a>
-      </div>
+    <div *ngIf="aboutList | async as aboutList">
+      <div fxLayout="row wrap" fxLayoutGap.gt-sm="10px">
+        <div *ngFor="let s of aboutList[0].social" fxFlex.lt-md="50" ngClass.lt-md="padding">
+          <a style="width: 100%"
+            mat-flat-button 
+            color="primary"
+            [style.background]="s.color" 
+            [matTooltip]="s.url" 
+            [href]="s.url">
+              <fa [name]="s.icon"></fa> {{s.name}}
+          </a>            
+        </div>
+      </div>    
     </div>
     <!-- SOCIAL END -->
 

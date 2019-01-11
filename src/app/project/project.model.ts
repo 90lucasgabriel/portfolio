@@ -1,5 +1,9 @@
-import { Category }       from '../category/category.model';
-
+/**
+ * Project model
+ *
+ * @export
+ * @class Project
+ */
 export class Project {
   constructor(
     public name?:	          string,
@@ -10,6 +14,12 @@ export class Project {
   ) {	}
 }
 
+/**
+ * ProjectImages model
+ *
+ * @export
+ * @interface ProjectImages
+ */
 export interface ProjectImages {
   url:                      string,
   description:              string

@@ -1,15 +1,21 @@
 // IMPORTS -----------------------------------------------------
+  // ANGULAR ----------
   import { Injectable }                 from '@angular/core';
-  import { AngularFirestore, AngularFirestoreCollection, DocumentSnapshot } from '@angular/fire/firestore';
-  import { Observable, combineLatest }  from 'rxjs';
-  import { map, switchMap }             from 'rxjs/operators';
+  import { AngularFirestoreCollection } from '@angular/fire/firestore';
+  import { Observable }                 from 'rxjs';
 
-  import { Contact }                    from './contact.model';
-  import { FirestoreService }           from '../common/services/firestore.service';
-
-
+  // OWNER ------------
+  import { Contact }                    from '@r-contact/contact.model';
+  import { FirestoreService }           from '@r-services/firestore.service';
 
 
+
+/**
+ * Contact Service
+ *
+ * @export
+ * @class ContactService
+ */
 @Injectable()
 export class ContactService {
 // DECLARATIONS --------------------------------------------------
@@ -22,9 +28,15 @@ export class ContactService {
 
 
 // METHODS -------------------------------------------------------
+  /**
+   * Insert item into collection
+   *
+   * @param {string} ref
+   * @param {Contact} data
+   * @returns
+   * @memberof ContactService
+   */
   public add(ref: string, data: Contact) {
-    console.log('ref', ref);
-    console.log('data', data);
     return this.fs.add(ref, data);
   }
 
@@ -32,6 +44,11 @@ export class ContactService {
 
 
 // OTHERS ---------------------------------------------------------
+  /**
+   * Creates an instance of ContactService.
+   * @param {FirestoreService} fs
+   * @memberof ContactService
+   */
   constructor(private fs: FirestoreService) { }
 
 }

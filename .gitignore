@@ -5,6 +5,10 @@
 /tmp
 /out-tsc
 
+# environments
+src/environments/environment.ts
+src/environments/environment.prod.ts
+
 # dependencies
 /node_modules
 
@@ -51,3 +55,5 @@ Thumbs.db
 /functions/node_modules/
 .firebase/*.cache
 *.cache
+
+

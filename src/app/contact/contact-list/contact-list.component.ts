@@ -1,20 +1,24 @@
-// IMPORTS ---------------------------
-  import { Component, ChangeDetectorRef, OnInit, OnDestroy, ViewEncapsulation, ViewChild } from '@angular/core';
+// IMPORTS ---------------------------------------------
+  // ANGULAR ------------
+  import { Component, ChangeDetectorRef, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
   import { FormControl, FormGroupDirective, FormBuilder, FormGroup, Validators }  from '@angular/forms';
   import { MediaMatcher }           from '@angular/cdk/layout';
-  import { SelectionModel }         from '@angular/cdk/collections';
-  import { Router }                 from '@angular/router';
   import { Location }               from '@angular/common';
-  import { MatSnackBar, MatSnackBarVerticalPosition } from '@angular/material';
+  import { MatSnackBarVerticalPosition } from '@angular/material';
+  import { Observable }             from 'rxjs';
 
-  import { Contact }                from '../contact.model';
-  import { ContactService }         from '../contact.service';
+  // OWNER --------------
+  import { About }                  from '@r-about/about.model';
+  import { Contact }                from '@r-contact/contact.model';
+  import { ContactService }         from '@r-contact/contact.service';
+  import { MaterialService }        from '@r-material/material.service';
+  import { AboutService }           from '@r-about/about.service';
 
 
 
 
 /**
- * List Contact
+ * Contact List Component
  *
  * @export
  * @class ContactListComponent
@@ -26,13 +30,14 @@
   styleUrls:          ['./contact-list.component.css'],
   encapsulation:      ViewEncapsulation.None
 })
-export class ContactListComponent implements OnInit, OnDestroy {
+export class ContactListComponent implements OnInit {
 // DECLARATIONS --------------------------
   @ViewChild(FormGroupDirective) myForm;
   public loading:               boolean;
   public recaptcha:             boolean;
   public contactForm:           FormGroup;
-  public validationMessages:    any;  
+  public validationMessages:    any; 
+  public aboutList:             Observable<About[]>;
 
   private mobileQuery:          MediaQueryList;
   private _mobileQueryListener: () => void;
@@ -43,15 +48,21 @@ export class ContactListComponent implements OnInit, OnDestroy {
 // MAIN ----------------------------------
   /**
    * Execute before onInit
+   *
+   * @private
+   * @memberof ContactListComponent
    */
   private start() {
+    this.aboutList      = this.aboutService.colWithSubcollections(['social']);
     this.verifyMobile(this.changeDetectorRef, this.media);
     this.contactForm        = this.createForm();    
   }  
 
   /**
    * Save form on Firestore 'contacts' collection
+   *
    * @param {FormGroup} contactForm
+   * @memberof ContactListComponent
    */
   public sendForm(contactForm: FormGroup) {
     if (this.contactForm.status == 'VALID') {
@@ -76,27 +87,28 @@ export class ContactListComponent implements OnInit, OnDestroy {
    * Creates an instance of ContactListComponent.
    * @param {ChangeDetectorRef} changeDetectorRef
    * @param {MediaMatcher} media
-   * @param {Router} router
-   * @param {MatSnackBar} snackbar
-   * @param {ContactService} service
+   * @param {Location} location
    * @param {FormBuilder} fb
+   * @param {MaterialService} material
+   * @param {ContactService} service
    * @memberof ContactListComponent
    */
   constructor(
     private changeDetectorRef:  ChangeDetectorRef,
     private media:              MediaMatcher,
     private location:           Location,
-    private router:             Router,
-    private snackBar:           MatSnackBar,
+    private fb:                 FormBuilder,
+    private material:           MaterialService,
     private service:            ContactService,
-    private fb:                 FormBuilder
-  ) {
-    this.start();
-  }
+    private aboutService:       AboutService,
+  ) { }
 
   /**
    * Create validations and FormControls
-   * @returns FormGroup
+   *
+   * @private
+   * @returns {FormGroup}
+   * @memberof ContactListComponent
    */
   private createForm(): FormGroup {
     this.validationMessages = {
@@ -131,16 +143,16 @@ export class ContactListComponent implements OnInit, OnDestroy {
     if (this.mobileQuery.matches) {
       position = 'top'
     }
-    this.snackBar.open(message, action, {
-        duration: 5000,
-        verticalPosition: position
-      });
+    this.material.snackBar(message, action, position);
   }
 
   /**
    * Check the screen size
+   *
+   * @private
    * @param {ChangeDetectorRef} changeDetectorRef
    * @param {MediaMatcher} media
+   * @memberof ContactListComponent
    */
   private verifyMobile(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher): void {
     this.mobileQuery          = media.matchMedia('(max-width: 1279px)');
@@ -150,17 +162,20 @@ export class ContactListComponent implements OnInit, OnDestroy {
 
   /**
    * Go to latest route
+   *
+   * @memberof ContactListComponent
    */
-  public goBack() {
+  public goBack(): void {
     this.location.back();
   }
+  
   /**
    * Execute on init
+   *
+   * @memberof ContactListComponent
    */
-  public ngOnInit() { }
+  public ngOnInit(): void {
+    this.start();
+   }
 
-  /**
-   * Execute on destroy
-   */
-  public ngOnDestroy() { }
 }

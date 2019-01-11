@@ -1,13 +1,28 @@
-import { NgModule }               from '@angular/core';
-import { RouterModule, Routes }   from '@angular/router';
+// IMPORTS ---------------------------------------
+  // ANGULAR ---------
+  import { NgModule }               from '@angular/core';
+  import { RouterModule, Routes }   from '@angular/router';
 
-import { AboutListComponent }    from './about-list/about-list.component';
+  // OWNER ---------
+  import { AboutListComponent }     from '@r-about/about-list/about-list.component';
+
+
+
 
 const aboutRoutes: Routes = [
   { path: 'about',       component: AboutListComponent,  pathMatch: 'full' },
   { path: '',            component: AboutListComponent,  pathMatch: 'full' } 
 ];
 
+
+
+
+/**
+ * AboutRouting Module
+ *
+ * @export
+ * @class AboutRoutingModule
+ */
 @NgModule({
   imports: [
     RouterModule.forChild(aboutRoutes)

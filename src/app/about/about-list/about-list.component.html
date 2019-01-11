@@ -46,9 +46,10 @@
           <p>{{item.birthdate | timestampToDate | age}} anos</p>
           <p *ngFor="let featured of item.featured">{{featured}}</p>
           
-          <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="10px">
-            <div fxLayout="row" fxLayoutGap="10px">
-              <a *ngFor="let s of item.social" fxFlex.lt-md="50" 
+          <!-- SOCIAL START -->
+          <div fxLayout="row wrap" fxLayoutGap.gt-sm="10px">
+            <div *ngFor="let s of item.social" fxFlex.lt-md="50" ngClass.lt-md="padding">
+              <a style="width: 100%"
                 mat-flat-button 
                 color="primary"
                 [style.background]="s.color" 
@@ -56,8 +57,10 @@
                 [href]="s.url">
                   <fa [name]="s.icon"></fa> {{s.name}}
               </a>            
-            </div>          
+            </div>
           </div>
+          <!-- SOCIAL END -->
+          
         </div>
         
       </div>

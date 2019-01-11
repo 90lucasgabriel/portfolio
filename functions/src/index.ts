@@ -3,6 +3,7 @@ const admin             = require('firebase-admin');
 const sgMail            = require('@sendgrid/mail');
 admin.initializeApp();
 
+// firebase functions:config:set sendgrid.key=SG.YOUR_API_KEY
 const SENDGRID_API_KEY  = functions.config().sendgrid.key;
 sgMail.setApiKey(SENDGRID_API_KEY);
 

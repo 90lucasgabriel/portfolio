@@ -5,7 +5,7 @@
   import { Location }                     from '@angular/common';
   import { Observable }                   from 'rxjs';
 
-  // PROJECT ------
+  // OWNER ------
   import { Project, ProjectImages }       from '../project.model';
   import { Category }                     from '../../category/category.model';
 

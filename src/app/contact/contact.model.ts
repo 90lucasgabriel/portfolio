@@ -1,3 +1,9 @@
+/**
+ * Contact model
+ *
+ * @export
+ * @class Contact
+ */
 export class Contact {
   constructor(
     public name?:	          string,
