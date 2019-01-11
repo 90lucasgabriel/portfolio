@@ -11,6 +11,9 @@
 src/environments/environment.ts
 src/environments/environment.prod.ts
 
+# documentation
+documentation
+
 
 # dependencies
 /node_modules
