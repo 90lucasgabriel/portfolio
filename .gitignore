@@ -4,6 +4,7 @@
 /dist
 /tmp
 /out-tsc
+.firebase
 
 # environments
 src/environments/environment.ts
