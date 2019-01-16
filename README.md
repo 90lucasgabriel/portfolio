@@ -30,12 +30,12 @@ npm install
 ```
 
 ## Firebase Integration
-- Clone src\environments\environment.example.ts and src\environments\environment.prod.example.ts without "example";
+- Clone **src\environments\environment.example.ts** and **src\environments\environment.prod.example.ts** without *"example"*;
 - Access [Firebase Console](https://console.firebase.google.com/);
 - Create a new project;
 - View project settings;
 - Copy web config;
-- Paste config into src\environments\environment.ts and src\environments\environment.prod.ts
+- Paste config into **src\environments\environment.ts** and **src\environments\environment.prod.ts**
 
 ## Running
 - Run the app:
